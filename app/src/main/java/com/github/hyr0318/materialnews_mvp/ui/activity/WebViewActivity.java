@@ -3,7 +3,6 @@ package com.github.hyr0318.materialnews_mvp.ui.activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
@@ -24,7 +23,6 @@ public class WebViewActivity extends BaseActivity {
     private WebView webView;
     private String source_url;
     private ProgressBar progressBar;
-    private Toolbar toolbar;
     private String title;
     private String newUrl = null;
 
@@ -44,7 +42,6 @@ public class WebViewActivity extends BaseActivity {
 
         progressBar = (ProgressBar) findViewById(R.id.pbProgress);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
     }
 
 
@@ -55,11 +52,7 @@ public class WebViewActivity extends BaseActivity {
 
     @Override protected void initViewsAndEvents() {
 
-        setSupportActionBar(toolbar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        setTitle(title);
 
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setDefaultTextEncodingName("UTF-8");
