@@ -9,7 +9,6 @@ Material Design 风格 结合使用Retrofit  RxJava  Jsoup Mvp 模式的一款�
 ##模块简介：
 #####轻松一刻：
 * 数据来源于百思不得其姐，其中包含视频播放，段子，图片。其中详情内容使用webview，视频播放使用[JCViewPlayer](https://github.com/lipangit/JieCaoVideoPlayer "JieCaoVideoPlayer") 。图片浏览使用Glide可以加载gif图片，点击图片可以查看大图，大图支持手势伸缩。
-
 #####今日头条
 * 数据来源于今日头条网站抓取的api接口，由于是网站上抓取下来的，信息可能会出现重复，视频详情部分同样使用webview跳转内部视频详情地址播放
 #####每日图文
