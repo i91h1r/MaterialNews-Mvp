@@ -5,6 +5,7 @@ Material Design 风格 结合使用Retrofit  RxJava  Jsoup Mvp 模式的一款�
 
 <br>[![TypeScript](https://badges.frapsoft.com/typescript/version/typescript-v18.svg?v=101)](https://github.com/hyr0318/MaterialNews-Mvp)  [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/hyr0318/MaterialNews-Mvp)  
 ##截图
+![](https://github.com/hyr0318/MaterialNews-Mvp/blob/master/image/2016%209%206_16%20918.png)
 ##模块简介：
 #####轻松一刻：
 * 数据来源于百思不得其姐，其中包含视频播放，段子，图片。其中详情内容使用webview，视频播放使用[JCViewPlayer](https://github.com/lipangit/JieCaoVideoPlayer "JieCaoVideoPlayer") 。图片浏览使用Glide可以加载gif图片，点击图片可以查看大图，大图支持手势伸缩
