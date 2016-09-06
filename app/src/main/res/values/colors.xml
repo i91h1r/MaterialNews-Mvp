@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#028CE5</color>
+    <color name="colorPrimaryDark">#028CE5</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <color name="base_bg">#ffeeeeee</color>
+    <color name="primary_text_color">#212121</color>
+    <color name="tab_underline_color">#ff9602</color>
+    <color name="item_tuwen_title_color">#fe4817</color>
+    <color name="item_tuwen_author_color">#c8bfb5</color>
+    <color name="item_tuwen_data_color">#a7a9bf</color>
+    <color name="item_tuwen_des_color">#1f0000</color>
+    <color name="dark_line">#555555</color>
+    <color name="dark_line_50">#9a9a9a</color>
+</resources>

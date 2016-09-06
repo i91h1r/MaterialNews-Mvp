@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="nagivation_list">
+        <item>轻松一刻</item>
+        <item>今日头条</item>
+        <item>每日图文</item>
+        <item>美图欣赏</item>
+
+    </array>
+
+    <string-array name="tab_array_type">
+        <item>video</item>
+        <item>subv_funny</item>
+        <item>subv_voice</item>
+        <item>subv_society</item>
+        <item>subv_entertainment</item>
+    </string-array>
+    <string-array name="tab_array_name">
+        <item>全部</item>
+        <item>逗比剧</item>
+        <item>好声音</item>
+        <item>看天下</item>
+        <item>最娱乐</item>
+
+    </string-array>
+    <string-array name="tab_array_tuwen_type">
+        <item>life</item>
+        <item>feeling</item>
+        <item>illustration</item>
+        <item>culture</item>
+        <item>pic</item>
+    </string-array>
+
+    <string-array name="tab_array_tuwen_name">
+        <item>生活图文</item>
+        <item>情感图文</item>
+        <item>插画图文</item>
+        <item>文化图文</item>
+        <item>唯美图片</item>
+    </string-array>
+    <string-array name="baidu_image_tab_type">
+        <item>二次元</item>
+        <item>丝袜美女</item>
+        <item>性感美女</item>
+        <item>美腿美女</item>
+        <item>唯美摄影</item>
+        <item>宠物</item>
+        <item>高清动漫</item>
+        <item>宠物</item>
+    </string-array>
+</resources>

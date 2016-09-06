@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <ImageView
+        android:scaleType="fitXY"
+        android:id="@+id/thumb"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        />
+
+    <RelativeLayout
+        android:layout_margin="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/item_tuwen_title_color"
+            android:text="生活图文"/>
+
+        <TextView
+            android:layout_toRightOf="@+id/type"
+            android:id="@+id/author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/item_tuwen_author_color"
+            android:text="wulala"/>
+
+        <TextView
+            android:singleLine="true"
+            android:layout_toRightOf="@+id/author"
+            android:id="@+id/data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/item_tuwen_data_color"
+            android:layout_marginLeft="5dp"
+            android:text="2045-15-45"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="我想你"/>
+
+    <TextView
+        android:layout_margin="5dp"
+        android:id="@+id/des"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/item_tuwen_des_color"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:text="法师发誓发生了法拉盛"/>
+</LinearLayout>

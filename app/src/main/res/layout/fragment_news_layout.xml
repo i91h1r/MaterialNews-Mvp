@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <com.github.hyr0318.materialnews_mvp.widget.SmartTabLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/img_tab_smart"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:stl_indicatorInterpolation="smart"
+        app:stl_indicatorColor="@color/tab_underline_color"
+        app:stl_indicatorThickness="@dimen/smart_tab_indicator_height"
+        app:stl_indicatorCornerRadius="@dimen/smart_tab_indicator_radius"
+        app:stl_dividerColor="@android:color/transparent"
+        app:stl_dividerThickness="0dp"
+        app:stl_underlineColor="@android:color/transparent"
+        app:stl_defaultTabTextColor="@android:color/white"
+        app:stl_defaultTabTextSize="@dimen/tab_test_size_16"
+        app:stl_defaultTabTextHorizontalPadding="@dimen/smart_tab_padding"/>
+
+    <com.github.hyr0318.baselibrary.widgets.XViewPager
+        android:id="@+id/img_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+
+</LinearLayout>

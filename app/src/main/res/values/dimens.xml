@@ -1,0 +1,13 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="text_size_20">20sp</dimen>
+    <dimen name="text_size_15">15sp</dimen>
+    <dimen name="drawer_left_260">260dp</dimen>
+    <dimen name="tab_test_size_16">16sp</dimen>
+    <dimen name="smart_tab_indicator_height">2dp</dimen>
+    <dimen name="smart_tab_indicator_radius">2dp</dimen>
+    <dimen name="smart_tab_padding">20dp</dimen>
+    <dimen name="load_more_footer_height_classic">60dp</dimen>
+</resources>

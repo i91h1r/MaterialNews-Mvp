@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="nagivation_list">
+        <item>轻松一刻</item>
+        <item>今日头条</item>
+        <item>每日图文</item>
+        <item>美图欣赏</item>
+
+
+    </array>
+
+
+</resources>
