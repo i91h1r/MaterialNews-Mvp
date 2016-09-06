@@ -5,7 +5,7 @@ Material Design 风格 结合使用Retrofit  RxJava  Jsoup Mvp 模式的一款�
 
 <br>[![TypeScript](https://badges.frapsoft.com/typescript/version/typescript-v18.svg?v=101)](https://github.com/hyr0318/MaterialNews-Mvp)  [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/hyr0318/MaterialNews-Mvp)  
 ##截图
-![](https://github.com/hyr0318/MaterialNews-Mvp/blob/master/image/2016%209%206_16%20918.png)
+![](https://github.com/hyr0318/MaterialNews-Mvp/blob/master/image/FhgiUrqPH2o-wtdkq7ybybIqTenz.png)![](https://github.com/hyr0318/MaterialNews-Mvp/blob/master/image/Fu-RMSBK8gwPQlPEV5W6R0fdtMif.png)![](https://github.com/hyr0318/MaterialNews-Mvp/blob/master/image/llLkq3ioq-Sq2QbGSl02F0GezPye.png)![](https://github.com/hyr0318/MaterialNews-Mvp/blob/master/image/lshfORwRDboOU57DHLSVPxwsehOO.png)
 ##模块简介：
 #####轻松一刻：
 * 数据来源于百思不得其姐，其中包含视频播放，段子，图片。其中详情内容使用webview，视频播放使用[JCViewPlayer](https://github.com/lipangit/JieCaoVideoPlayer "JieCaoVideoPlayer") 。图片浏览使用Glide可以加载gif图片，点击图片可以查看大图，大图支持手势伸缩
@@ -17,7 +17,7 @@ Material Design 风格 结合使用Retrofit  RxJava  Jsoup Mvp 模式的一款�
 * 数据来源于[http://www.tuweng.com/](http://www.tuweng.com/ "图翁") 使用Jsoup 抓取解析网站内容，用RecycleView 瀑布流展示，图文详情内容数据同样使用Jsoup 抓取图文详情页面解析出来。
 
 #####美图欣赏
-* 数据来源百度图片网站抓取api接口，包含 二次元，丝袜美女，性感美女，美腿美女，唯美摄影，宠物，高清动漫，宠物 子分类/br
+* 数据来源百度图片网站抓取api接口，包含 二次元，丝袜美女，性感美女，美腿美女，唯美摄影，宠物，高清动漫，宠物 子分类
 
 ##说明
 * 数据均来源于网络部分，抓取网站api接口，和通过jsoup解析网站内容。
