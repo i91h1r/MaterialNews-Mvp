@@ -1,4 +1,4 @@
-
+\
 ## MaterialNews 
 Material Design 风格 结合使用Retrofit  RxJava  Jsoup Mvp 模式的一款资讯类 学习app，包含4 个模块 轻松一刻，今日头条，每日图文，美图欣赏。
 
@@ -8,9 +8,9 @@ Material Design 风格 结合使用Retrofit  RxJava  Jsoup Mvp 模式的一款�
 ##截图
 ##模块简介：
 #####轻松一刻：
-* 数据来源于百思不得其姐，其中包含视频播放，段子，图片。其中详情内容使用webview，视频播放使用[JCViewPlayer](https://github.com/lipangit/JieCaoVideoPlayer "JieCaoVideoPlayer") 。图片浏览使用Glide可以加载gif图片，点击图片可以查看大图，大图支持手势伸缩。/br
+* 数据来源于百思不得其姐，其中包含视频播放，段子，图片。其中详情内容使用webview，视频播放使用[JCViewPlayer](https://github.com/lipangit/JieCaoVideoPlayer "JieCaoVideoPlayer") 。图片浏览使用Glide可以加载gif图片，点击图片可以查看大图，大图支持手势伸缩。
 #####今日头条
-* 数据来源于今日头条网站抓取的api接口，由于是网站上抓取下来的，信息可能会出现重复，视频详情部分同样使用webview跳转内部视频详情地址播放/br
+* 数据来源于今日头条网站抓取的api接口，由于是网站上抓取下来的，信息可能会出现重复，视频详情部分同样使用webview跳转内部视频详情地址播放
 #####每日图文
 * 数据来源于[http://www.tuweng.com/](http://www.tuweng.com/ "图翁") 使用Jsoup 抓取解析网站内容，用RecycleView 瀑布流展示，图文详情内容数据同样使用Jsoup 抓取图文详情页面解析出来。/br
 #####美图欣赏
