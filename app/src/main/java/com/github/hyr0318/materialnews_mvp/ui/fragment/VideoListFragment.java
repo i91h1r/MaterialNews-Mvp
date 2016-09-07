@@ -70,13 +70,6 @@ public class VideoListFragment extends BaseFragment
 
     @Override protected void initViewsAndEvents() {
 
-        bgaRefreshLayout.setDelegate(this);
-
-        BGANormalRefreshViewHolder bgaNormalRefreshViewHolder = new BGANormalRefreshViewHolder(
-            mContext, true);
-
-        bgaRefreshLayout.setRefreshViewHolder(bgaNormalRefreshViewHolder);
-
         videoListAdapter = new VideoListAdapter(mContext, mCurrentType);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(mContext);
@@ -166,6 +159,18 @@ public class VideoListFragment extends BaseFragment
 
         startActivity(intent);
 
+    }
+
+
+    @Override protected View getRefreshLayoutView() {
+        return bgaRefreshLayout;
+    }
+
+
+    @Override protected void initRefreshLayout(BGANormalRefreshViewHolder bgaNormalRefreshViewHolder) {
+        bgaRefreshLayout.setDelegate(this);
+
+        bgaRefreshLayout.setRefreshViewHolder(bgaNormalRefreshViewHolder);
     }
 
 

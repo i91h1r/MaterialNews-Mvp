@@ -2,6 +2,7 @@ package com.github.hyr0318.materialnews_mvp.ui.fragment;
 
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import cn.bingoogolapple.refreshlayout.BGANormalRefreshViewHolder;
 import com.github.hyr0318.baselibrary.base.fragment.BaseFragment;
 import com.github.hyr0318.baselibrary.eventbus.EventCenter;
 import com.github.hyr0318.baselibrary.widgets.XViewPager;
@@ -33,6 +34,16 @@ public class ImageMainFragment extends BaseFragment implements ImageMainContract
 
 
     @Override protected void onUserVisible() {
+
+    }
+
+
+    @Override protected View getRefreshLayoutView() {
+        return null;
+    }
+
+
+    @Override protected void initRefreshLayout(BGANormalRefreshViewHolder bgaNormalRefreshViewHolder) {
 
     }
 

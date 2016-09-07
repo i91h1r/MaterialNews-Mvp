@@ -48,14 +48,28 @@ public class TuwenFragment extends BaseFragment implements TuwenContract.TuwenVi
 
         if (NetUtils.isNetworkConnected(mContext)) {
 
-            tuwenList.postDelayed(()->tuwenPresenter.loadListData(TAG_LOG, Constants.EVENT_REFRESH_DATA, type,
-                mCurrentPage, false),ApiConstants.Integers.PAGE_LAZY_LOAD_DELAY_TIME_MS);
+            tuwenList.postDelayed(
+                () -> tuwenPresenter.loadListData(TAG_LOG, Constants.EVENT_REFRESH_DATA, type,
+                    mCurrentPage, false), ApiConstants.Integers.PAGE_LAZY_LOAD_DELAY_TIME_MS);
 
         }
     }
 
 
     @Override protected void onUserVisible() {
+
+    }
+
+
+    @Override protected View getRefreshLayoutView() {
+        return bgaRefreshLayout;
+    }
+
+
+    @Override
+    protected void initRefreshLayout(BGANormalRefreshViewHolder bgaNormalRefreshViewHolder) {
+        bgaRefreshLayout.setDelegate(this);
+        bgaRefreshLayout.setRefreshViewHolder(bgaNormalRefreshViewHolder);
 
     }
 
@@ -73,13 +87,6 @@ public class TuwenFragment extends BaseFragment implements TuwenContract.TuwenVi
 
 
     @Override protected void initViewsAndEvents() {
-
-        bgaRefreshLayout.setDelegate(this);
-
-        BGANormalRefreshViewHolder bgaNormalRefreshViewHolder = new BGANormalRefreshViewHolder(
-            mContext, true);
-
-        bgaRefreshLayout.setRefreshViewHolder(bgaNormalRefreshViewHolder);
 
         tuwenAapter = new TuwenAapter(mContext);
 

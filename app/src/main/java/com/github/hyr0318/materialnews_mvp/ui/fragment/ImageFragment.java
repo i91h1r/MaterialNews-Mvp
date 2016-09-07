@@ -41,6 +41,8 @@ public class ImageFragment extends BaseFragment
 
     @Override protected void onFirstUserVisible() {
 
+        bgaRefreshLayout.setDelegate(this);
+
         type = mContext.getResources().getStringArray(R.array.baidu_image_tab_type)[0];
 
         imagePresenter = new ImagePresenterImpl(mContext, this);
@@ -64,6 +66,18 @@ public class ImageFragment extends BaseFragment
     }
 
 
+    @Override protected View getRefreshLayoutView() {
+        return bgaRefreshLayout;
+    }
+
+
+    @Override protected void initRefreshLayout(BGANormalRefreshViewHolder bgaNormalRefreshViewHolder) {
+
+
+        bgaRefreshLayout.setRefreshViewHolder(bgaNormalRefreshViewHolder);
+    }
+
+
     @Override protected void getViewById(View view) {
 
         recyclerView = (RecyclerView) view.findViewById(R.id.image_list);
@@ -78,12 +92,6 @@ public class ImageFragment extends BaseFragment
 
 
     @Override protected void initViewsAndEvents() {
-        bgaRefreshLayout.setDelegate(this);
-
-        BGANormalRefreshViewHolder bgaNormalRefreshViewHolder = new BGANormalRefreshViewHolder(
-            mContext, true);
-
-        bgaRefreshLayout.setRefreshViewHolder(bgaNormalRefreshViewHolder);
 
         imageAdapter = new ImageAdapter(this, mContext);
 
@@ -137,6 +145,7 @@ public class ImageFragment extends BaseFragment
 
             imageAdapter.notifyDataSetChanged();
 
+            bgaRefreshLayout.endRefreshing();
         }
     }
 
@@ -171,13 +180,12 @@ public class ImageFragment extends BaseFragment
         if (NetUtils.isNetworkConnected(mContext)) {
             cl++;
 
-            Logger.d(cl);
             imagePresenter.loadListData(TAG_LOG, Constants.EVENT_LOAD_MORE_DATA, type,
                 cl, true);
 
             return true;
         }
 
-        return false;
+        return true;
     }
 }

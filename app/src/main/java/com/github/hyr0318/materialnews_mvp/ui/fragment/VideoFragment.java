@@ -2,6 +2,7 @@ package com.github.hyr0318.materialnews_mvp.ui.fragment;
 
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import cn.bingoogolapple.refreshlayout.BGANormalRefreshViewHolder;
 import com.github.hyr0318.baselibrary.base.fragment.BaseFragment;
 import com.github.hyr0318.baselibrary.eventbus.EventCenter;
 import com.github.hyr0318.baselibrary.widgets.XViewPager;
@@ -20,6 +21,16 @@ import java.util.List;
 public class VideoFragment extends BaseFragment implements VideoMainContract.VideoMainView {
     private XViewPager xViewPager;
     private SmartTabLayout smartTabLayout;
+
+
+    @Override protected View getRefreshLayoutView() {
+        return null;
+    }
+
+
+    @Override protected void initRefreshLayout(BGANormalRefreshViewHolder bgaNormalRefreshViewHolder) {
+
+    }
 
 
     @Override protected void getViewById(View view) {

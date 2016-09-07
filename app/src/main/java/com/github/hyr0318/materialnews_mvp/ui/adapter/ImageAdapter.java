@@ -8,11 +8,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import com.github.hyr0318.materialnews_mvp.R;
 import com.github.hyr0318.materialnews_mvp.entity.ImageResult;
 import com.github.hyr0318.materialnews_mvp.ui.activity.ImagesDetailActivity;
 import com.github.hyr0318.materialnews_mvp.ui.fragment.ImageFragment;
+import com.github.hyr0318.materialnews_mvp.widget.PLAImageView;
 import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,14 +31,12 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImgaeViewHol
 
     private ImageFragment imageFragment;
 
-    private  List<Integer> mHeights ;
 
     public ImageAdapter(ImageFragment imageFragment, Context mContext) {
 
         inflater = LayoutInflater.from(mContext);
         this.mContext = mContext;
         this.imageFragment = imageFragment;
-        mHeights = new ArrayList<>();
     }
 
 
@@ -63,19 +61,15 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImgaeViewHol
 
     @Override public void onBindViewHolder(ImgaeViewHolder holder, int position) {
 
-        if(mHeights.size() <= position){
-            mHeights.add((int)(300+Math.random()*1000));
-        }
-
-        ViewGroup.LayoutParams layoutParams = holder.imageView.getLayoutParams();
-
-        layoutParams.height = mHeights.get(position);
-
-        holder.imageView.setLayoutParams(layoutParams);
-
         Picasso.with(mContext).load(data.get(position).getThumbURL()).into(holder.imageView);
 
+        int height1 = data.get(position).getHeight();
 
+        int width1 = data.get(position).getWidth();
+
+        holder.imageView.setImageHeight(height1);
+
+        holder.imageView.setImageWidth(width1);
 
         holder.imageView.setOnClickListener(v -> {
             int[] location = new int[2];
@@ -118,13 +112,13 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImgaeViewHol
 
     public class ImgaeViewHolder extends RecyclerView.ViewHolder {
 
-        private final ImageView imageView;
+        private final PLAImageView imageView;
 
 
         public ImgaeViewHolder(View itemView) {
             super(itemView);
 
-            imageView = (ImageView) itemView.findViewById(R.id.imageview);
+            imageView = (PLAImageView) itemView.findViewById(R.id.imageview);
         }
     }
 }

@@ -42,8 +42,11 @@ public class JokeFragment extends BaseFragment implements JokeContract.JokeView,
         jokePresenter = new JokePresenterImpl(mContext, this);
 
         if (NetUtils.isNetworkConnected(mContext)) {
-            jokeList.postDelayed(()->jokePresenter.loadListData(TAG_LOG, Constants.EVENT_REFRESH_DATA, mCurrentPage,
-                Constants.SHOW_API_APP_ID, time, Constants.SHOW_API_SIGN, false),ApiConstants.Integers.PAGE_LAZY_LOAD_DELAY_TIME_MS);
+            jokeList.postDelayed(
+                () -> jokePresenter.loadListData(TAG_LOG, Constants.EVENT_REFRESH_DATA,
+                    mCurrentPage,
+                    Constants.SHOW_API_APP_ID, time, Constants.SHOW_API_SIGN, false),
+                ApiConstants.Integers.PAGE_LAZY_LOAD_DELAY_TIME_MS);
 
         }
     }
@@ -54,10 +57,23 @@ public class JokeFragment extends BaseFragment implements JokeContract.JokeView,
     }
 
 
+    @Override protected View getRefreshLayoutView() {
+        return bgaRefreshLayout;
+    }
+
+
+    @Override
+    protected void initRefreshLayout(BGANormalRefreshViewHolder bgaNormalRefreshViewHolder) {
+        bgaRefreshLayout.setDelegate(this);
+
+        bgaRefreshLayout.setRefreshViewHolder(bgaNormalRefreshViewHolder);
+    }
+
+
     @Override protected void getViewById(View view) {
         bgaRefreshLayout = (BGARefreshLayout) view.findViewById(R.id.joke_bga);
 
-     jokeList =    ((RecyclerView) view.findViewById(R.id.jokeList));
+        jokeList = ((RecyclerView) view.findViewById(R.id.jokeList));
     }
 
 
@@ -67,13 +83,6 @@ public class JokeFragment extends BaseFragment implements JokeContract.JokeView,
 
 
     @Override protected void initViewsAndEvents() {
-
-        bgaRefreshLayout.setDelegate(this);
-
-        BGANormalRefreshViewHolder bgaNormalRefreshViewHolder = new BGANormalRefreshViewHolder(
-            mContext, true);
-
-        bgaRefreshLayout.setRefreshViewHolder(bgaNormalRefreshViewHolder);
 
         jokeAdapter = new JokeAdapter(mContext, getActivity());
 
