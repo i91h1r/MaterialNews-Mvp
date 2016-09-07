@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:textColor="@color/item_tuwen_title_color"
-            android:text="生活图文"/>
+           />
 
         <TextView
             android:layout_toRightOf="@+id/type"
@@ -37,7 +37,7 @@
             android:textSize="15sp"
             android:layout_marginLeft="5dp"
             android:textColor="@color/item_tuwen_author_color"
-            android:text="wulala"/>
+           />
 
         <TextView
             android:singleLine="true"
@@ -48,7 +48,7 @@
             android:textSize="16sp"
             android:textColor="@color/item_tuwen_data_color"
             android:layout_marginLeft="5dp"
-            android:text="2045-15-45"/>
+            />
     </RelativeLayout>
 
     <TextView

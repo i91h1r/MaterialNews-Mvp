@@ -31,12 +31,14 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImgaeViewHol
 
     private ImageFragment imageFragment;
 
+    private  List<Integer> mHeights ;
 
     public ImageAdapter(ImageFragment imageFragment, Context mContext) {
 
         inflater = LayoutInflater.from(mContext);
         this.mContext = mContext;
         this.imageFragment = imageFragment;
+        mHeights = new ArrayList<>();
     }
 
 
@@ -60,6 +62,16 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImgaeViewHol
 
 
     @Override public void onBindViewHolder(ImgaeViewHolder holder, int position) {
+
+        if(mHeights.size() <= position){
+            mHeights.add((int)(300+Math.random()*1000));
+        }
+
+        ViewGroup.LayoutParams layoutParams = holder.imageView.getLayoutParams();
+
+        layoutParams.height = mHeights.get(position);
+
+        holder.imageView.setLayoutParams(layoutParams);
 
         Picasso.with(mContext).load(data.get(position).getThumbURL()).into(holder.imageView);
 

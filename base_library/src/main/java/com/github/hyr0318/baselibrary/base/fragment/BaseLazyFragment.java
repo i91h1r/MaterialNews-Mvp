@@ -62,6 +62,8 @@ public abstract class BaseLazyFragment extends Fragment {
         } else {
             return super.onCreateView(inflater, container, savedInstanceState);
         }
+
+
     }
 
 

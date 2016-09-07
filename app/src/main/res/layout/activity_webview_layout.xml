@@ -7,7 +7,7 @@
 
     <android.support.v7.widget.Toolbar
         style="@style/ToolBarStyle"
-        android:id="@+id/toolbar"
+        android:id="@+id/common_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary">
@@ -19,7 +19,7 @@
         android:id="@+id/pbProgress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar"
+        android:layout_below="@+id/common_toolbar"
         android:max="100"/>
 
     <WebView
