@@ -11,6 +11,7 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import cn.bingoogolapple.refreshlayout.BGANormalRefreshViewHolder;
 import com.github.hyr0318.baselibrary.eventbus.EventCenter;
 import com.github.hyr0318.baselibrary.loading.LoadingViewController;
 import com.github.hyr0318.baselibrary.net.NetChangeObserver;
@@ -58,9 +59,22 @@ public abstract class BaseLazyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater,
                              @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (getContentViewLayoutID() != 0) {
+            View view = inflater.inflate(getContentViewLayoutID(), null);
+
+            getViewById(view);
 
 
-            return inflater.inflate(getContentViewLayoutID(), null);
+            if(getRefreshLayoutView() != null){
+
+                BGANormalRefreshViewHolder bgaNormalRefreshViewHolder = new BGANormalRefreshViewHolder(
+                    mContext, true);
+
+                initRefreshLayout(bgaNormalRefreshViewHolder);
+
+            }
+
+
+            return view;
         } else {
             return super.onCreateView(inflater, container, savedInstanceState);
         }
@@ -69,14 +83,17 @@ public abstract class BaseLazyFragment extends Fragment {
     }
 
 
+    protected abstract View getRefreshLayoutView();
+
+
+    protected abstract void initRefreshLayout(BGANormalRefreshViewHolder bgaNormalRefreshViewHolder);
+
 
 
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        getViewById(view);
 
         if (null != getLoadingView()) {
             loadingViewController = new LoadingViewController(getLoadingView());
