@@ -70,8 +70,6 @@ dependencies {
 
     compile 'com.orhanobut:logger:1.14'
 
-    compile 'com.nineoldandroids:library:2.4.0'
-    compile 'cn.bingoogolapple:bga-refreshlayout:1.1.6@aar'
 
     compile 'com.liaoinstan.springview:library:1.2.6'
 
@@ -82,4 +80,6 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
 
 
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'cn.bingoogolapple:bga-refreshlayout:1.1.6@aar'
 }

@@ -58,6 +58,8 @@ public abstract class BaseLazyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater,
                              @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (getContentViewLayoutID() != 0) {
+
+
             return inflater.inflate(getContentViewLayoutID(), null);
         } else {
             return super.onCreateView(inflater, container, savedInstanceState);
@@ -65,6 +67,9 @@ public abstract class BaseLazyFragment extends Fragment {
 
 
     }
+
+
+
 
 
     @Override

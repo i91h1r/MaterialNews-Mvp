@@ -53,4 +53,6 @@ dependencies {
     compile "com.squareup.retrofit2:adapter-rxjava:$RETROFIT_VERSION"
 
     compile 'com.github.chrisbanes.photoview:library:1.2.2'
+
+
 }
