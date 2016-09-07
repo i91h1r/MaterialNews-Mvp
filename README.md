@@ -1,5 +1,5 @@
 ## MaterialNews 
-Material Design 风格 结合使用Retrofit  RxJava  Jsoup Mvp 模式的一款资讯类 学习app，包含4 个模块 轻松一刻，今日头条，每日图文，美图欣赏。
+Material Design 风格 结合使用Retrofit  RxJava  Jsoup Mvp 模式的一款资讯类 学习app，包含4 个模块 轻松一刻，今日头条，每日图文，美图欣赏。整体代码很简单，很容易学到大概Retrofit  RxJava  Jsoup Mvp 的一些基本使用
 
 ----------
 
