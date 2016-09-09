@@ -27,7 +27,7 @@ Material Design 风格 结合使用Retrofit  RxJava  Jsoup Mvp 模式的一款�
 * 使用了一些github开源项目，非常感谢。
 
 ## 开源项目
-* StatusBarUtil :[https://github.com/hyr0318/StatusBarUtil](https://github.com/hyr0318/StatusBarUtil "StatusBarUtil") 
+* StatusBarUtil :[https://github.com/laobie/StatusBarUtil](https://github.com/laobie/StatusBarUtil)
 
 * JieCaoVideoPlayer:[https://github.com/lipangit/JieCaoVideoPlayer](https://github.com/lipangit/JieCaoVideoPlayer "JieCaoVideoPlayer")
 
