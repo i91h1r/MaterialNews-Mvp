@@ -1,9 +1,12 @@
 package com.github.hyr0318.materialnews_mvp.data;
 
+import com.github.hyr0318.materialnews_mvp.entity.HomeOneIdResult;
+import com.github.hyr0318.materialnews_mvp.entity.HomeOneResult;
 import com.github.hyr0318.materialnews_mvp.entity.ImageResult;
 import com.github.hyr0318.materialnews_mvp.entity.JokeResult;
 import com.github.hyr0318.materialnews_mvp.entity.TouTiaoVideoResult;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 import rx.Observable;
 
@@ -33,4 +36,12 @@ public interface ApiService {
         @Query("tn") String tn,
         @Query("ipn") String ipn, @Query("word") String word, @Query("cl") String  cl);
 
+    //http://v3.wufazhuce.com:8000/api/hp/idlist/0?
+
+    @GET("/api/hp/idlist/0?")
+    Observable<HomeOneIdResult> getHomeOneId();
+
+    //http://v3.wufazhuce.com:8000/api/hp/detail/1457?
+    @GET("/api/hp/detail/{id}")
+    Observable<HomeOneResult> getHomeOneData(@Path("id")String id );
 }

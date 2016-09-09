@@ -2,12 +2,15 @@ package com.github.hyr0318.materialnews_mvp.ui.activity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
+import com.bumptech.glide.Glide;
 import com.github.hyr0318.baselibrary.base.activity.BaseActivity;
 import com.github.hyr0318.baselibrary.eventbus.EventCenter;
 import com.github.hyr0318.baselibrary.net.NetUtils;
 import com.github.hyr0318.materialnews_mvp.R;
 import com.github.hyr0318.materialnews_mvp.contract.WelecomeContract;
+import com.github.hyr0318.materialnews_mvp.entity.HomeOneResult;
 import com.github.hyr0318.materialnews_mvp.presenter.WelecomePresenterImpl;
 import java.util.Date;
 
@@ -19,9 +22,12 @@ public class WelecomeActivity extends BaseActivity implements WelecomeContract.V
     TextView tvVersionName;
     TextView welCopyright;
 
-    final long WELCOME_TIME = 1500;
+    final long WELCOME_TIME = 2500;
     private Date mStartDate;
     private WelecomePresenterImpl welecomePresenter;
+    private ImageView iv_welecome;
+    private TextView tv_author;
+    private TextView comment;
 
 
     @Override protected int getContentViewLayoutID() {
@@ -35,9 +41,15 @@ public class WelecomeActivity extends BaseActivity implements WelecomeContract.V
 
 
     @Override protected void getViewById() {
-         tvVersionName = (TextView) findViewById(R.id.tv_version);
+        tvVersionName = (TextView) findViewById(R.id.tv_version);
 
         welCopyright = (TextView) findViewById(R.id.tv_copyright);
+
+        iv_welecome = (ImageView) findViewById(R.id.iv_welecome);
+
+        comment = (TextView) findViewById(R.id.comment);
+
+        tv_author = (TextView) findViewById(R.id.tv_author);
     }
 
 
@@ -53,7 +65,7 @@ public class WelecomeActivity extends BaseActivity implements WelecomeContract.V
         welecomePresenter = new WelecomePresenterImpl(this, this);
 
         welecomePresenter.initialized();
-
+        welecomePresenter.loadHomeOne();
         readyGoMain();
     }
 
@@ -113,4 +125,19 @@ public class WelecomeActivity extends BaseActivity implements WelecomeContract.V
         }
 
     }
+
+
+    @Override public void getHomeOne(HomeOneResult oneResult) {
+
+        if (null != oneResult) {
+
+            tv_author.setText(oneResult.getData().getHp_author());
+
+            comment.setText(oneResult.getData().getHp_content());
+
+            Glide.with(this).load(oneResult.getData().getHp_img_url()).into(iv_welecome);
+        }
+
+    }
+
 }

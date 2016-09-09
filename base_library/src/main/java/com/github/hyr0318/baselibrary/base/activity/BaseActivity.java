@@ -50,7 +50,7 @@ public abstract class BaseActivity extends BaseAppCompatActivity implements Base
             });
 
         }
-        //setStatuBar();
+        setStatuBar();
     }
 
 

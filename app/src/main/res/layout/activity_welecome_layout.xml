@@ -6,50 +6,58 @@
     android:orientation="vertical">
 
     <ImageView
+
         android:id="@+id/iv_welecome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@mipmap/welecome"
         android:scaleType="fitXY"/>
 
     <TextView
+        android:id="@+id/tv_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_below="@+id/iv_welecome"
+        android:layout_alignParentRight="true"/>
+
+    <TextView
+        android:layout_margin="5dp"
+        android:id="@+id/comment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_below="@+id/iv_welecome"
+        android:layout_below="@+id/tv_author"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/text_size_20"
-        android:layout_marginTop="30dp"
-        android:text="@string/app_name"/>
+        android:layout_marginTop="30dp"/>
 
     <LinearLayout
 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
         android:gravity="center"
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@drawable/gradient_blue_white">
 
         <TextView
-            android:textSize="@dimen/text_size_15"
-            android:textColor="@color/primary_text_color"
             android:id="@+id/tv_version"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            />
-
-        <TextView
             android:textSize="@dimen/text_size_15"
             android:textColor="@color/primary_text_color"
-            android:lineSpacingExtra="2dp"
+            android:gravity="center"/>
+
+        <TextView
             android:id="@+id/tv_copyright"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            />
+            android:textSize="@dimen/text_size_15"
+            android:textColor="@color/primary_text_color"
+            android:lineSpacingExtra="2dp"
+            android:gravity="center"/>
 
     </LinearLayout>
 

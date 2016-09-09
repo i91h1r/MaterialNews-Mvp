@@ -11,4 +11,5 @@ public class Urls {
     public static final String TUWEN_BASE_URL = "http://www.tuweng.com/";
     public static final String JOKE_BASE_URL = "https://route.showapi.com/255-1/";
     public static final String BAIDU_IMAGE_BASE_URL = "https://image.baidu.com/";
+    public static final String ONE_BASE_URL="http://v3.wufazhuce.com:8000/";
 }

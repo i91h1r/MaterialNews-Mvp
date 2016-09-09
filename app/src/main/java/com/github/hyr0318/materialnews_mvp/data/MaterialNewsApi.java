@@ -1,10 +1,13 @@
 package com.github.hyr0318.materialnews_mvp.data;
 
 import com.github.hyr0318.materialnews_mvp.api.Urls;
+import com.github.hyr0318.materialnews_mvp.entity.HomeOneIdResult;
+import com.github.hyr0318.materialnews_mvp.entity.HomeOneResult;
 import com.github.hyr0318.materialnews_mvp.entity.ImageResult;
 import com.github.hyr0318.materialnews_mvp.entity.JokeResult;
 import com.github.hyr0318.materialnews_mvp.entity.TouTiaoVideoResult;
 import com.github.hyr0318.materialnews_mvp.utils.RetrofitUtil;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
@@ -44,9 +47,25 @@ public class MaterialNewsApi implements ApiService {
     @Override
     public Observable<ImageResult> getImageList(
         @Query("tn") String tn,
-        @Query("ipn") String ipn, @Query("word") String word, @Query("cl") String  cl) {
+        @Query("ipn") String ipn, @Query("word") String word, @Query("cl") String cl) {
         return RetrofitUtil.getApi(Urls.BAIDU_IMAGE_BASE_URL)
             .getImageList(tn, ipn, word, cl)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread());
+    }
+
+
+    @Override public Observable<HomeOneIdResult> getHomeOneId() {
+        return RetrofitUtil.getApi(Urls.ONE_BASE_URL)
+            .getHomeOneId()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread());
+    }
+
+
+    @Override public Observable<HomeOneResult> getHomeOneData(@Path("id") String id) {
+        return RetrofitUtil.getApi(Urls.ONE_BASE_URL)
+            .getHomeOneData(id)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread());
     }
