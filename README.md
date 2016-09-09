@@ -33,7 +33,7 @@ Material Design 风格 结合使用Retrofit  RxJava  Jsoup Mvp 模式的一款�
 
 * retrofit: [https://github.com/square/retrofit](https://github.com/square/retrofit "retrofit")
 * jsoup: [https://github.com/jhy/jsoup](https://github.com/jhy/jsoup "jsoup")
-* BGARefreshLayout-Android：[https://github.com/hyr0318/MaterialNews-Mvp/edit/master/README.md](https://github.com/hyr0318/MaterialNews-Mvp/edit/master/README.md)
+* BGARefreshLayout-Android：[https://github.com/bingoogolapple/BGARefreshLayout-Android](https://github.com/bingoogolapple/BGARefreshLayout-Android)
 
 ----------
 
