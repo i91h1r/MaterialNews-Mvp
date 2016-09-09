@@ -20,7 +20,7 @@ Material Design 风格 结合使用Retrofit  RxJava  Jsoup Mvp 模式的一款�
 * 数据来源百度图片网站抓取api接口，包含 二次元，丝袜美女，性感美女，美腿美女，唯美摄影，宠物，高清动漫，宠物 子分类
 
 ##版本
-* v1.0 基础功能：包括每日图文，头条视频，美图欣赏，轻松一刻
+* v1.0 基础功能：包括每日图文，头条视频，美图欣赏，轻松一刻.欢迎页非正常手段抓取 one 一个 app接口，如有侵权，请告知，立即删除。
 
 ##说明
 * 数据均来源于网络部分，抓取网站api接口，和通过jsoup解析网站内容。
@@ -33,6 +33,7 @@ Material Design 风格 结合使用Retrofit  RxJava  Jsoup Mvp 模式的一款�
 
 * retrofit: [https://github.com/square/retrofit](https://github.com/square/retrofit "retrofit")
 * jsoup: [https://github.com/jhy/jsoup](https://github.com/jhy/jsoup "jsoup")
+* BGARefreshLayout-Android：[https://github.com/hyr0318/MaterialNews-Mvp/edit/master/README.md](https://github.com/hyr0318/MaterialNews-Mvp/edit/master/README.md)
 
 ----------
 
