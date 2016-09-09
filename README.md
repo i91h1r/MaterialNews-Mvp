@@ -18,7 +18,8 @@ Material Design 风格 结合使用Retrofit  RxJava  Jsoup Mvp 模式的一款�
 
 #####美图欣赏
 * 数据来源百度图片网站抓取api接口，包含 二次元，丝袜美女，性感美女，美腿美女，唯美摄影，宠物，高清动漫，宠物 子分类
-
+##版本
+* v1.0 基础功能：包括每日图文，头条视频，美图欣赏，轻松一刻
 ##说明
 * 数据均来源于网络部分，抓取网站api接口，和通过jsoup解析网站内容。
 * 使用了一些github开源项目，非常感谢。
@@ -40,10 +41,10 @@ Material Design 风格 结合使用Retrofit  RxJava  Jsoup Mvp 模式的一款�
 #####Email:2045446584@qq.com
 #####Github:[https://github.com/hyr0318/](https://github.com/hyr0318/)
 ----------
-    `Copyright 2016 HuangYiRui
+    Copyright 2016 HuangYiRui
 
 	Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
 	http://www.apache.org/licenses/LICENSE-2.0
 
-	Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.`
+	Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
