@@ -36,7 +36,7 @@ Material Design 风格 结合使用Retrofit  RxJava  Jsoup Mvp 模式的一款�
 
                 }
             });</pre>
-	使用flatmap 第一次请求获取文章id，第二次请求使用获取奥的id获取文章详情。
+	使用flatmap 第一次请求获取文章id，第二次请求使用获取到的id获取文章详情。
 
 ##说明
 * 数据均来源于网络部分，抓取网站api接口，和通过jsoup解析网站内容。
