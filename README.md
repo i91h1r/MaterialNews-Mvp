@@ -21,6 +21,22 @@ Material Design 风格 结合使用Retrofit  RxJava  Jsoup Mvp 模式的一款�
 
 ##版本
 * v1.0 基础功能：包括每日图文，头条视频，美图欣赏，轻松一刻.欢迎页非正常手段抓取 one 一个 app接口，如有侵权，请告知，立即删除。
+<pre>
+	materialNewsApi.getHomeOneId()
+            .flatMap(new Func1<HomeOneIdResult, Observable<HomeOneResult>>() {
+                @Override public Observable<HomeOneResult> call(HomeOneIdResult homeOneIdResult) {
+                    return materialNewsApi.getHomeOneData(homeOneIdResult.getData().get(0));
+                }
+            })
+            .subscribeOn(Schedulers.immediate())
+            .subscribe(new BaseObserver<HomeOneResult>() {
+                @Override protected void onSucceed(HomeOneResult result) {
+
+                    multiLoadedListener.onSuccess(0 ,result);
+
+                }
+            });</pre>
+	使用flatmap 第一次请求获取文章id，第二次请求使用获取奥的id获取文章详情。
 
 ##说明
 * 数据均来源于网络部分，抓取网站api接口，和通过jsoup解析网站内容。
