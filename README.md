@@ -7,8 +7,37 @@ Material Design 风格 结合使用Retrofit  RxJava  Jsoup Mvp 模式的一款�
 ##截图
 ![](https://github.com/hyr0318/MaterialNews-Mvp/blob/master/image/gif.gif)![](https://github.com/hyr0318/MaterialNews-Mvp/blob/master/image/FhgiUrqPH2o-wtdkq7ybybIqTenz.png)![](https://github.com/hyr0318/MaterialNews-Mvp/blob/master/image/Fu-RMSBK8gwPQlPEV5W6R0fdtMif.png)![](https://github.com/hyr0318/MaterialNews-Mvp/blob/master/image/llLkq3ioq-Sq2QbGSl02F0GezPye.png)![](https://github.com/hyr0318/MaterialNews-Mvp/blob/master/image/lshfORwRDboOU57DHLSVPxwsehOO.png)
 ##模块简介：
-#####轻松一刻：
-* 数据来源于百思不得其姐，其中包含视频播放，段子，图片。其中详情内容使用webview，视频播放使用[JCViewPlayer](https://github.com/lipangit/JieCaoVideoPlayer "JieCaoVideoPlayer") 。图片浏览使用Glide可以加载gif图片，点击图片可以查看大图，大图支持手势伸缩
+#####百思不得姐：
+* 数据来源于百思不得其姐app抓取api，其中包含视频播放，段子，图片。，视频播放使用[JCViewPlayer](https://github.com/lipangit/JieCaoVideoPlayer "JieCaoVideoPlayer") 。
+* api 分析 ：
+	* 获取分类列表api ：http://s.budejie.com/public/list-appbar/budejie-android-6.5.11/
+	`  {
+           	"name": "精华",
+            "submenus": [
+                {
+                    "url": "http://s.budejie.com/topic/list/jingxuan/1/",
+                    "god_topic_type": "nan",
+                    "type": "topic",
+                    "entrytype": "self.koushu.android.feed.16081610415837",
+                    "name": "推荐"
+                },
+                {
+                    "url": "http://s.budejie.com/topic/list/jingxuan/41/",
+                    "god_topic_type": "nan",
+                    "type": "topic",
+                    "entrytype": "self.koushu.android.feed.16081610415837",
+                    "name": "视频"
+                },`
+其中url中后面的例如/1/  /41/ 就是分类需要的类型参数
+
+	* 获取分类下的列表数据 ：http://s.budejie.com/topic/list/jingxuan/1/budejie-android-6.5.11/0-20.json
+	
+		其中0 - 20  20代表美亚加载20条数据，0 是刷新最新，下一页是用过去时间的时间戳作为参数获取下一页数据 例如：20621073 - 20
+	* 获取评论 ：http://api.budejie.com/api/api_open.php?a=dataList&c=comment&data_id=20565881
+
+		data_id ： 每条数据的id ，用这个id区获取这条数据的所有评论
+
+	
 
 #####今日头条
 * 数据来源于今日头条网站抓取的api接口，由于是网站上抓取下来的，信息可能会出现重复，视频详情部分同样使用webview跳转内部视频详情地址播放
