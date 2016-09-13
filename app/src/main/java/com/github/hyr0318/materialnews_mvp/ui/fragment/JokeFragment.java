@@ -1,8 +1,10 @@
 package com.github.hyr0318.materialnews_mvp.ui.fragment;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import cn.bingoogolapple.refreshlayout.BGANormalRefreshViewHolder;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
@@ -12,11 +14,12 @@ import com.github.hyr0318.baselibrary.net.NetUtils;
 import com.github.hyr0318.materialnews_mvp.R;
 import com.github.hyr0318.materialnews_mvp.api.ApiConstants;
 import com.github.hyr0318.materialnews_mvp.common.Constants;
-import com.github.hyr0318.materialnews_mvp.contract.JokeContract;
-import com.github.hyr0318.materialnews_mvp.entity.JokeResult;
+import com.github.hyr0318.materialnews_mvp.contract.BaiSiContract;
+import com.github.hyr0318.materialnews_mvp.entity.BaiSiResult;
+import com.github.hyr0318.materialnews_mvp.listener.OnPagerSelectedListener;
 import com.github.hyr0318.materialnews_mvp.listener.OnRecyclerViewItemClickListener;
-import com.github.hyr0318.materialnews_mvp.presenter.JokePresenterImpl;
-import com.github.hyr0318.materialnews_mvp.ui.activity.WebViewActivity;
+import com.github.hyr0318.materialnews_mvp.presenter.BaiSiPresenterImpl;
+import com.github.hyr0318.materialnews_mvp.ui.activity.BaiSiDetailActivity;
 import com.github.hyr0318.materialnews_mvp.ui.adapter.JokeAdapter;
 import java.util.List;
 
@@ -24,28 +27,39 @@ import java.util.List;
  * Author: hyr on 2016/8/28.
  * Email:2045446584@qq.com
  */
-public class JokeFragment extends BaseFragment implements JokeContract.JokeView,
+public class JokeFragment extends BaseFragment implements BaiSiContract.BaiSiView,
     BGARefreshLayout.BGARefreshLayoutDelegate,
-    OnRecyclerViewItemClickListener<JokeResult.ShowapiResBodyBean.PagebeanBean.ContentlistBean> {
+    OnPagerSelectedListener, OnRecyclerViewItemClickListener<BaiSiResult.ListBean> {
     private RecyclerView jokeList;
 
-    private int mCurrentPage = 1;
+    private long mCurrentPage = 0;
 
-    private String time;
     private JokeAdapter jokeAdapter;
     private BGARefreshLayout bgaRefreshLayout;
-    private JokePresenterImpl jokePresenter;
+    private BaiSiPresenterImpl baiSiPresenter;
+
+    private String url;
+
+
+    public JokeFragment(String url) {
+
+        this.url = url;
+    }
 
 
     @Override protected void onFirstUserVisible() {
 
-        jokePresenter = new JokePresenterImpl(mContext, this);
+        baiSiPresenter = new BaiSiPresenterImpl(mContext, this);
+
+        long l = System.currentTimeMillis();
+
+        Log.d("time=============", String.valueOf(l));
 
         if (NetUtils.isNetworkConnected(mContext)) {
             jokeList.postDelayed(
-                () -> jokePresenter.loadListData(TAG_LOG, Constants.EVENT_REFRESH_DATA,
-                    mCurrentPage,
-                    Constants.SHOW_API_APP_ID, time, Constants.SHOW_API_SIGN, false),
+                () -> baiSiPresenter.loadListData(TAG_LOG, Constants.EVENT_REFRESH_DATA,
+                    url, mCurrentPage,
+                    false),
                 ApiConstants.Integers.PAGE_LAZY_LOAD_DELAY_TIME_MS);
 
         }
@@ -86,7 +100,7 @@ public class JokeFragment extends BaseFragment implements JokeContract.JokeView,
 
         jokeAdapter = new JokeAdapter(mContext, getActivity());
 
-        jokeAdapter.setOnRecyclerViewItemClickListener(this);
+         jokeAdapter.setOnRecyclerViewItemClickListener(this);
         jokeList.setLayoutManager(new LinearLayoutManager(mContext));
 
         jokeList.setAdapter(jokeAdapter);
@@ -113,36 +127,30 @@ public class JokeFragment extends BaseFragment implements JokeContract.JokeView,
     }
 
 
-    @Override public void refreshListData(JokeResult jokeResult) {
+    @Override public void refreshListData(BaiSiResult baiSiResult) {
+        List<BaiSiResult.ListBean> baiSiResultList = baiSiResult.getList();
 
-        bgaRefreshLayout.endRefreshing();
+        if (null != baiSiResult) {
 
-        if (null != jokeResult) {
+            jokeAdapter.getBaiSiResultList().clear();
 
-            JokeResult.ShowapiResBodyBean showapi_res_body = jokeResult.getShowapi_res_body();
-
-            JokeResult.ShowapiResBodyBean.PagebeanBean pagebean = showapi_res_body.getPagebean();
-
-            List<JokeResult.ShowapiResBodyBean.PagebeanBean.ContentlistBean> contentlist
-                = pagebean.getContentlist();
-
-            jokeAdapter.getContentlist().clear();
-
-            jokeAdapter.getContentlist().addAll(contentlist);
+            jokeAdapter.getBaiSiResultList().addAll(baiSiResultList);
 
             jokeAdapter.notifyDataSetChanged();
+
+            bgaRefreshLayout.endRefreshing();
 
         }
 
     }
 
 
-    @Override public void addMoreListData(JokeResult jokeResult) {
-
-        jokeAdapter.getContentlist()
-            .addAll(jokeResult.getShowapi_res_body().getPagebean().getContentlist());
+    @Override public void addMoreListData(BaiSiResult baiSiResult) {
+        jokeAdapter.getBaiSiResultList()
+            .addAll(baiSiResult.getList());
         jokeAdapter.notifyDataSetChanged();
 
+        Log.d("baiSiResult ====", baiSiResult.getList().get(0).getComment());
         bgaRefreshLayout.endLoadingMore();
     }
 
@@ -150,19 +158,29 @@ public class JokeFragment extends BaseFragment implements JokeContract.JokeView,
     @Override public void onBGARefreshLayoutBeginRefreshing(BGARefreshLayout refreshLayout) {
         mCurrentPage = 0;
         if (NetUtils.isNetworkConnected(mContext)) {
-            jokePresenter.loadListData(TAG_LOG, Constants.EVENT_REFRESH_DATA, mCurrentPage,
-                Constants.SHOW_API_APP_ID, time, Constants.SHOW_API_SIGN, true);
+            baiSiPresenter.loadListData(TAG_LOG, Constants.EVENT_REFRESH_DATA, url, mCurrentPage,
+                true);
         }
     }
+
+
+    int i = 1;
 
 
     @Override public boolean onBGARefreshLayoutBeginLoadingMore(BGARefreshLayout refreshLayout) {
 
         if (NetUtils.isNetworkConnected(mContext)) {
-            mCurrentPage++;
 
-            jokePresenter.loadListData(TAG_LOG, Constants.EVENT_LOAD_MORE_DATA, mCurrentPage,
-                Constants.SHOW_API_APP_ID, time, Constants.SHOW_API_SIGN, true);
+            i++;
+
+            long time = Long.parseLong(
+                String.valueOf(System.currentTimeMillis()).toString().substring(0, 10));//
+
+            mCurrentPage= time - 200000 * i;
+
+
+            baiSiPresenter.loadListData(TAG_LOG, Constants.EVENT_LOAD_MORE_DATA, url, mCurrentPage
+                , true);
 
             return true;
         }
@@ -171,14 +189,25 @@ public class JokeFragment extends BaseFragment implements JokeContract.JokeView,
     }
 
 
-    @Override
-    public void onItemClick(View view, JokeResult.ShowapiResBodyBean.PagebeanBean.ContentlistBean entity) {
+
+    @Override public void onPagerSelected(int position, String type) {
+        url = type;
+    }
+
+
+    @Override public void onItemClick(View view, BaiSiResult.ListBean entity) {
 
         Intent intent = new Intent();
 
-        intent.setClass(mContext, WebViewActivity.class);
-        intent.putExtra("source_url", entity.getWeixin_url());
-        intent.putExtra("title", entity.getText());
+        intent.setClass(mContext, BaiSiDetailActivity.class);
+
+        Bundle bundle = new Bundle();
+
+        bundle.putParcelable("entity",entity);
+
+
+        intent.putExtras(bundle);
+
         startActivity(intent);
     }
 }

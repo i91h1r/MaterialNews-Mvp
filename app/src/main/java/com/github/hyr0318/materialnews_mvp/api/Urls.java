@@ -12,4 +12,9 @@ public class Urls {
     public static final String JOKE_BASE_URL = "https://route.showapi.com/255-1/";
     public static final String BAIDU_IMAGE_BASE_URL = "https://image.baidu.com/";
     public static final String ONE_BASE_URL="http://v3.wufazhuce.com:8000/";
+
+    public static final String BAISI_BASE_URL="http://s.budejie.com/";
+    public static final String BAISI__COMMENT_BASE_URL="http://s.budejie.com/";
+
+    public static final String BAISI__DETAIL_BASE_URL="http://api.budejie.com/api/";
 }

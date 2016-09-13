@@ -1,6 +1,9 @@
 package com.github.hyr0318.materialnews_mvp.data;
 
 import com.github.hyr0318.materialnews_mvp.api.Urls;
+import com.github.hyr0318.materialnews_mvp.entity.BaiSiDetailResult;
+import com.github.hyr0318.materialnews_mvp.entity.BaiSiResult;
+import com.github.hyr0318.materialnews_mvp.entity.BaiSiTabResult;
 import com.github.hyr0318.materialnews_mvp.entity.HomeOneIdResult;
 import com.github.hyr0318.materialnews_mvp.entity.HomeOneResult;
 import com.github.hyr0318.materialnews_mvp.entity.ImageResult;
@@ -66,6 +69,33 @@ public class MaterialNewsApi implements ApiService {
     @Override public Observable<HomeOneResult> getHomeOneData(@Path("id") String id) {
         return RetrofitUtil.getApi(Urls.ONE_BASE_URL)
             .getHomeOneData(id)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread());
+    }
+
+
+    @Override public Observable<BaiSiTabResult> getTabList() {
+        return RetrofitUtil.getApi(Urls.BAISI_BASE_URL)
+            .getTabList()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread());
+    }
+
+
+    @Override
+    public Observable<BaiSiResult> getBaiSiList(
+        @Path("type") String type, @Path("page") long page) {
+        return RetrofitUtil.getApi(Urls.BAISI__COMMENT_BASE_URL)
+            .getBaiSiList(type, page)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread());
+    }
+
+
+    @Override
+    public Observable<BaiSiDetailResult> getBaiSiDetailResult(@Query("data_id") String data_id) {
+        return RetrofitUtil.getApi(Urls.BAISI__DETAIL_BASE_URL)
+            .getBaiSiDetailResult(data_id)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread());
     }

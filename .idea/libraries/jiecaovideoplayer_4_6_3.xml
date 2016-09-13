@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="jiecaovideoplayer-4.6.3">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/fm.jiecao/jiecaovideoplayer/4.6.3/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/fm.jiecao/jiecaovideoplayer/4.6.3/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/fm.jiecao/jiecaovideoplayer/4.6.3/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

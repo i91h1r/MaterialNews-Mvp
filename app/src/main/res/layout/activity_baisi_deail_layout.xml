@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_bg"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        style="@style/ToolBarStyle"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_centerInParent="true"
+            android:text="评论"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <com.github.hyr0318.materialnews_mvp.widget.SpringScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_margin="5dp"
+                android:text="最新评论"/>
+
+            <cn.bingoogolapple.refreshlayout.BGARefreshLayout
+                android:id="@+id/bga"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/base_bg">
+
+                <!-- 内容控件 -->
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rcy"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:scrollbars="none"
+                    android:background="@color/base_bg"
+                    android:layout_weight="1"/>
+            </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
+        </LinearLayout>
+    </com.github.hyr0318.materialnews_mvp.widget.SpringScrollView>
+</LinearLayout>

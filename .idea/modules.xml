@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MaterialNews-Mvp-master.iml" filepath="$PROJECT_DIR$/MaterialNews-Mvp-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MaterialNews-Mvp.iml" filepath="$PROJECT_DIR$/MaterialNews-Mvp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/base_library/base_library.iml" filepath="$PROJECT_DIR$/base_library/base_library.iml" />
     </modules>

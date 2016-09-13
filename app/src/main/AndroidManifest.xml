@@ -37,6 +37,11 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:name=".ui.activity.ImagesDetailActivity"
             android:theme="@style/AppTheme.ImagesDetail"></activity>
+
+        <activity
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:name=".ui.activity.BaiSiDetailActivity"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

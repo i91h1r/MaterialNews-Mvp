@@ -22,10 +22,12 @@ public class RetrofitUtil {
             RxJavaCallAdapterFactory.create());
 
         return builder ;
+
     }
 
     public  static ApiService getApi (String baseuRL){
 
         return  get(baseuRL).build().create(ApiService.class);
     }
+
 }

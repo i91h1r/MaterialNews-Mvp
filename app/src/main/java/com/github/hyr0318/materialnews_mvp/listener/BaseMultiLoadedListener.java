@@ -16,7 +16,6 @@
 
 package com.github.hyr0318.materialnews_mvp.listener;
 
-
 public interface BaseMultiLoadedListener<T> {
 
     /**
@@ -40,4 +39,5 @@ public interface BaseMultiLoadedListener<T> {
      * @param msg
      */
     void onException(String msg);
+
 }

@@ -1,5 +1,8 @@
 package com.github.hyr0318.materialnews_mvp.data;
 
+import com.github.hyr0318.materialnews_mvp.entity.BaiSiDetailResult;
+import com.github.hyr0318.materialnews_mvp.entity.BaiSiResult;
+import com.github.hyr0318.materialnews_mvp.entity.BaiSiTabResult;
 import com.github.hyr0318.materialnews_mvp.entity.HomeOneIdResult;
 import com.github.hyr0318.materialnews_mvp.entity.HomeOneResult;
 import com.github.hyr0318.materialnews_mvp.entity.ImageResult;
@@ -34,7 +37,7 @@ public interface ApiService {
     @GET("/search/acjson ")
     Observable<ImageResult> getImageList(
         @Query("tn") String tn,
-        @Query("ipn") String ipn, @Query("word") String word, @Query("cl") String  cl);
+        @Query("ipn") String ipn, @Query("word") String word, @Query("cl") String cl);
 
     //http://v3.wufazhuce.com:8000/api/hp/idlist/0?
 
@@ -43,5 +46,18 @@ public interface ApiService {
 
     //http://v3.wufazhuce.com:8000/api/hp/detail/1457?
     @GET("/api/hp/detail/{id}")
-    Observable<HomeOneResult> getHomeOneData(@Path("id")String id );
+    Observable<HomeOneResult> getHomeOneData(@Path("id") String id);
+
+    @GET("/public/list-appbar/budejie-android-6.5.11/")
+    Observable<BaiSiTabResult> getTabList();
+
+    //http://s.budejie.com/topic/list/jingxuan/1/budejie-android-6.5.11/0-20.json
+    @GET("{type}/budejie-android-6.5.11/{page}-20.json")
+    Observable<BaiSiResult> getBaiSiList(@Path("type") String type, @Path("page") long page);
+
+    //http://s.budejie.com/
+    //http://api.budejie.com/api/api_open.php?a=dataList&c=comment&data_id=20565881
+    @GET("api_open.php?a=dataList&c=comment")
+    Observable<BaiSiDetailResult> getBaiSiDetailResult(@Query("data_id") String data_id);
+
 }

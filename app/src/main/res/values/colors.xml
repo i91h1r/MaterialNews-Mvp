@@ -14,4 +14,5 @@
     <color name="item_tuwen_des_color">#1f0000</color>
     <color name="dark_line">#555555</color>
     <color name="dark_line_50">#9a9a9a</color>
+    <color name="red">#cc0000</color>
 </resources>

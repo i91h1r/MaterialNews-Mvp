@@ -6,7 +6,7 @@ import com.github.hyr0318.materialnews_mvp.R;
 import com.github.hyr0318.materialnews_mvp.contract.HomeContract;
 import com.github.hyr0318.materialnews_mvp.entity.HomeNavigationEntity;
 import com.github.hyr0318.materialnews_mvp.ui.fragment.ImageMainFragment;
-import com.github.hyr0318.materialnews_mvp.ui.fragment.JokeFragment;
+import com.github.hyr0318.materialnews_mvp.ui.fragment.JokeMainFragment;
 import com.github.hyr0318.materialnews_mvp.ui.fragment.TuwenMainFragment;
 import com.github.hyr0318.materialnews_mvp.ui.fragment.VideoFragment;
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ public class HomeModelImpl implements HomeContract.Model {
 
     @Override public List<BaseLazyFragment> getFragments(Context context) {
         List<BaseLazyFragment> fragments = new ArrayList<>();
-        fragments.add(new JokeFragment());
+        fragments.add(new JokeMainFragment());
         fragments.add(new VideoFragment());
         fragments.add(new TuwenMainFragment());
         fragments.add(new ImageMainFragment());
