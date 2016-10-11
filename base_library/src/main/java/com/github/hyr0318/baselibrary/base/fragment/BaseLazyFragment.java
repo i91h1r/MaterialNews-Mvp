@@ -11,6 +11,7 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import butterknife.ButterKnife;
 import cn.bingoogolapple.refreshlayout.BGANormalRefreshViewHolder;
 import com.github.hyr0318.baselibrary.eventbus.EventCenter;
 import com.github.hyr0318.baselibrary.loading.LoadingViewController;
@@ -95,6 +96,7 @@ public abstract class BaseLazyFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        ButterKnife.bind(this,view);
         if (null != getLoadingView()) {
             loadingViewController = new LoadingViewController(getLoadingView());
         }

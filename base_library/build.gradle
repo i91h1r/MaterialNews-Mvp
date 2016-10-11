@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-
+apply plugin: 'com.jakewharton.butterknife'
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.1"
@@ -56,4 +56,9 @@ dependencies {
 
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'cn.bingoogolapple:bga-refreshlayout:1.1.6@aar'
+
+
+    //view注释
+    compile 'com.jakewharton:butterknife:latest.release'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:latest.release'
 }
