@@ -7,6 +7,7 @@ import android.support.annotation.LayoutRes;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import butterknife.ButterKnife;
 import com.github.hyr0318.baselibrary.base.BaseAppManager;
 import com.github.hyr0318.baselibrary.eventbus.EventCenter;
 import com.github.hyr0318.baselibrary.loading.LoadingViewController;
@@ -57,6 +58,8 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity {
         } else {
             throw new IllegalArgumentException("返回一个正确的ContentView");
         }
+
+        ButterKnife.bind(this);
 
         netChangeObserver = new NetChangeObserver() {
             @Override public void onNetConnected(NetUtils.NetType type) {

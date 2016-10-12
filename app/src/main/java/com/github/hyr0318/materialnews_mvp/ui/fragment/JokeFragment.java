@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import butterknife.BindView;
 import cn.bingoogolapple.refreshlayout.BGANormalRefreshViewHolder;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 import com.github.hyr0318.baselibrary.base.fragment.BaseFragment;
@@ -30,12 +31,17 @@ import java.util.List;
 public class JokeFragment extends BaseFragment implements BaiSiContract.BaiSiView,
     BGARefreshLayout.BGARefreshLayoutDelegate,
     OnPagerSelectedListener, OnRecyclerViewItemClickListener<BaiSiResult.ListBean> {
-    private RecyclerView jokeList;
+
+    @BindView(R.id.jokeList)
+    RecyclerView jokeList;
 
     private long mCurrentPage = 0;
 
     private JokeAdapter jokeAdapter;
-    private BGARefreshLayout bgaRefreshLayout;
+
+    @BindView(R.id.joke_bga)
+     BGARefreshLayout bgaRefreshLayout;
+
     private BaiSiPresenterImpl baiSiPresenter;
 
     private String url;
@@ -85,9 +91,6 @@ public class JokeFragment extends BaseFragment implements BaiSiContract.BaiSiVie
 
 
     @Override protected void getViewById(View view) {
-        bgaRefreshLayout = (BGARefreshLayout) view.findViewById(R.id.joke_bga);
-
-        jokeList = ((RecyclerView) view.findViewById(R.id.jokeList));
     }
 
 

@@ -83,4 +83,6 @@ dependencies {
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'cn.bingoogolapple:bga-refreshlayout:1.1.6@aar'
 
+    compile deps.butterknife
+    annotationProcessor deps.butterknifeCompiler
 }

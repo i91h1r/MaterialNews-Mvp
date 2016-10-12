@@ -1,3 +1,8 @@
+buildscript {
+    dependencies {
+        classpath 'com.jakewharton:butterknife-gradle-plugin:8.4.0'
+    }
+}
 apply plugin: 'com.android.library'
 apply plugin: 'com.jakewharton.butterknife'
 android {
@@ -59,6 +64,6 @@ dependencies {
 
 
     //view注释
-    compile 'com.jakewharton:butterknife:latest.release'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:latest.release'
+    compile deps.butterknife
+    annotationProcessor deps.butterknifeCompiler
 }

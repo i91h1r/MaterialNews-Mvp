@@ -6,8 +6,8 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/cardview-v7/24.0.0/1dfc872e68fcb6697dc3f078a72d7991570dc40e/cardview-v7-24.0.0-sources.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/cardview-v7/24.0.0/1dfc872e68fcb6697dc3f078a72d7991570dc40e/cardview-v7-24.0.0-sources.jar!/" />
+      <root url="jar://E:/SDK/sdk1/extras/android/m2repository/com/android/support/cardview-v7/24.0.0/cardview-v7-24.0.0-sources.jar!/" />
+      <root url="jar://E:/SDK/sdk1/extras/android/m2repository/com/android/support/cardview-v7/24.0.0/cardview-v7-24.0.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
